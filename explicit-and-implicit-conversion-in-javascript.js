@@ -19,14 +19,27 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-let result = "5" - 2;
-console.log("The result is: " + result);
+let result = Number("5") - 2; // added Number() to convert string "5" to number 5 for correct subtraction
+console.log("The result is: " + result); // 
 
-let isValid = Boolean("false");
+let isValid = Boolean(false); // fixed by using Boolean() to explicitly convert false to boolean false
 if (isValid) {
     console.log("This is valid!");
 }
 
-let age = "25";
+let age = Number("25"); // Fixed code to correct the concatenation with in the code and actually have the math done.
 let totalAge = age + 5;
 console.log("Total Age: " + totalAge);
+
+
+// Implicit Type Conversion Example 
+let totalBalls = 10 + null;
+console.log("Total Balls: " + totalBalls);
+console.log("After conversion, totalBalls is a: " + typeof totalBalls); // Implicitly converts null to 0, so totalBalls becomes 10")
+
+
+// Explicit Type Conversion Example
+let myString = "100";
+let myNumber = Number(myString);
+console.log("Before explicit conversion, myString is a: " + typeof myString); // myString is a string
+console.log("After explicit conversion, myNumber is a: " + typeof myNumber); // myNumber is a number
